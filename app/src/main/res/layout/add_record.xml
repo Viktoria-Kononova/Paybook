@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/period"
+            android:textSize="@dimen/header"
+            android:paddingLeft="@dimen/indent"
+            android:paddingTop="@dimen/indent"
+            android:paddingBottom="@dimen/indent"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/indent"
+        android:paddingRight="@dimen/indent">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonDataDialog"
+            android:layout_weight="1"
+            android:background="@color/settings_color"
+            android:text="месяц"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_data"
+        android:textSize="@dimen/header"
+        android:paddingLeft="@dimen/indent"
+        android:paddingTop="@dimen/indent"
+        android:paddingBottom="@dimen/indent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/indent"
+        android:paddingRight="@dimen/indent"
+        android:paddingBottom="@dimen/indent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/light"
+            android:textSize="@dimen/service_name_size"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/settings_color"
+            android:inputType="number"
+            android:id="@+id/editTextLight"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/indent"
+        android:paddingRight="@dimen/indent"
+        android:paddingBottom="@dimen/indent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cold_water"
+            android:textSize="@dimen/service_name_size"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textColor="@color/settings_color"
+            android:id="@+id/editTextColdWater"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/indent"
+        android:paddingRight="@dimen/indent"
+        android:paddingBottom="@dimen/indent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hot_water"
+            android:textSize="@dimen/service_name_size"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textColor="@color/settings_color"
+            android:id="@+id/editTextHotWater"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="189dp"
+        android:paddingBottom="@dimen/indent"
+        android:paddingLeft="@dimen/indent"
+        android:paddingRight="@dimen/indent"
+        android:layout_weight="7.23">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/add"
+            android:layout_gravity="bottom"
+            android:background="@color/settings_color"/>
+
+    </LinearLayout>
+
+</LinearLayout>

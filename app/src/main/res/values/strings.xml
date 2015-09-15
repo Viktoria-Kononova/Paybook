@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Paybook</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="tariffs">Тарифы</string>
+    <string name="light">свет</string>
+    <string name="hot_water">горячая вода</string>
+    <string name="cold_water">холодная вода</string>
+    <string name="start_position">Начальные показания счетчика</string>
+    <string name="save">Сохранить</string>
+    <string name="period">Выберите период</string>
+    <string name="enter_data">Введите показания</string>
+    <string name="add">Добавить</string>
+    <string name="choose_period">Выберите период</string>
+</resources>
