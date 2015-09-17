@@ -8,6 +8,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.kononova.paybook.fragments.MainFragment;
+import com.example.kononova.paybook.settings.ITariff;
+import com.example.kononova.paybook.settings.StorageTariff;
+import com.example.kononova.paybook.settings.Tariffs;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override

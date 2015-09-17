@@ -1,12 +1,12 @@
-package com.example.kononova.paybook;
+package com.example.kononova.paybook.settings;
 
 public class MemoryTariff implements ITariff {
     private float lightTariff;
     private float coldWaterTariff;
     private float hotWaterTariff;
-    private int lightStartPosition;
-    private int coldWaterStartPosition;
-    private int hotWaterStartPosition;
+    private int lightPosition;
+    private int coldWaterPosition;
+    private int hotWaterPosition;
 
     @Override
     public float getLightTariff() {
@@ -39,32 +39,32 @@ public class MemoryTariff implements ITariff {
     }
 
     @Override
-    public int getLightStartPosition() {
-        return lightStartPosition;
+    public int getLightPosition() {
+        return lightPosition;
     }
 
     @Override
-    public void setLightStartPosition(int lightStartPosition) {
-        this.lightStartPosition = lightStartPosition;
+    public void setLightPosition(int lightPosition) {
+        this.lightPosition = lightPosition;
     }
 
     @Override
-    public int getColdWaterStartPosition() {
-        return coldWaterStartPosition;
+    public int getColdWaterPosition() {
+        return coldWaterPosition;
     }
 
     @Override
-    public void setColdWaterStartPosition(int coldWaterStartPosition) {
-        this.coldWaterStartPosition = coldWaterStartPosition;
+    public void setColdWaterPosition(int coldWaterPosition) {
+        this.coldWaterPosition = coldWaterPosition;
     }
 
     @Override
-    public int getHotWaterStartPosition() {
-        return hotWaterStartPosition;
+    public int getHotWaterPosition() {
+        return hotWaterPosition;
     }
 
     @Override
-    public void setHotWaterStartPosition(int hotWaterStartPosition) {
-        this.hotWaterStartPosition = hotWaterStartPosition;
+    public void setHotWaterPosition(int hotWaterPosition) {
+        this.hotWaterPosition = hotWaterPosition;
     }
 }

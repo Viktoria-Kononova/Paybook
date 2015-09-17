@@ -1,6 +1,5 @@
-package com.example.kononova.paybook;
+package com.example.kononova.paybook.fragments;
 
-import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,6 +9,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.kononova.paybook.R;
+import com.example.kononova.paybook.Utils;
+import com.example.kononova.paybook.settings.Tariffs;
+
 public class SettingsFragment extends Fragment implements View.OnClickListener{
     private EditText lightTariffPre;
     private EditText coldWaterTariffPre;
@@ -18,16 +21,15 @@ public class SettingsFragment extends Fragment implements View.OnClickListener{
     private EditText coldWaterStartPositionPre;
     private EditText hotWaterStartPositionPre;
     private Button confirm;
-    private MainFragment mainFragment;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.settings, container, false);
 
-        lightTariffPre = (EditText)rootView.findViewById(R.id.editTextLight);
-        coldWaterTariffPre = (EditText)rootView.findViewById(R.id.editTextColdWater);
-        hotWaterTariffPre = (EditText)rootView.findViewById(R.id.editTextHotWater);
+        lightTariffPre = (EditText)rootView.findViewById(R.id.editTextLightTariff);
+        coldWaterTariffPre = (EditText)rootView.findViewById(R.id.editTextColdWaterTariff);
+        hotWaterTariffPre = (EditText)rootView.findViewById(R.id.editTextHotWaterTariff);
         lightStartPositionPre = (EditText)rootView.findViewById(R.id.editTextLightPosition);
         coldWaterStartPositionPre = (EditText)rootView.findViewById(R.id.editTextColdWaterPosition);
         hotWaterStartPositionPre = (EditText)rootView.findViewById(R.id.editTextHotWaterPosition);
@@ -35,14 +37,12 @@ public class SettingsFragment extends Fragment implements View.OnClickListener{
         lightTariffPre.setText(String.valueOf(Tariffs.getInstance().getLightTariff()));
         coldWaterTariffPre.setText(String.valueOf(Tariffs.getInstance().getColdWaterTariff()));
         hotWaterTariffPre.setText(String.valueOf(Tariffs.getInstance().getHotWaterTariff()));
-        lightStartPositionPre.setText(String.valueOf(Tariffs.getInstance().getLightStartPosition()));
-        coldWaterStartPositionPre.setText(String.valueOf(Tariffs.getInstance().getColdWaterStartPosition()));
-        hotWaterStartPositionPre.setText(String.valueOf(Tariffs.getInstance().getHotWaterStartPosition()));
+        lightStartPositionPre.setText(String.valueOf(Tariffs.getInstance().getLightPosition()));
+        coldWaterStartPositionPre.setText(String.valueOf(Tariffs.getInstance().getColdWaterPosition()));
+        hotWaterStartPositionPre.setText(String.valueOf(Tariffs.getInstance().getHotWaterPosition()));
 
         confirm = (Button)rootView.findViewById(R.id.buttonConfirm);
         confirm.setOnClickListener(this);
-
-        mainFragment = new MainFragment();
 
         return rootView;
     }
@@ -56,14 +56,12 @@ public class SettingsFragment extends Fragment implements View.OnClickListener{
         float hotWaterTariff = Float.parseFloat(hotWaterTariffPre.getText().toString());
         Tariffs.getInstance().setHotWaterTariff(hotWaterTariff);
         int lightStartPosition = Integer.parseInt(lightStartPositionPre.getText().toString());
-        Tariffs.getInstance().setLightStartPosition(lightStartPosition);
+        Tariffs.getInstance().setLightPosition(lightStartPosition);
         int coldWaterStartPosition = Integer.parseInt(coldWaterStartPositionPre.getText().toString());
-        Tariffs.getInstance().setColdWaterStartPosition(coldWaterStartPosition);
+        Tariffs.getInstance().setColdWaterPosition(coldWaterStartPosition);
         int hotWaterStartPosition = Integer.parseInt(hotWaterStartPositionPre.getText().toString());
-        Tariffs.getInstance().setHotWaterStartPosition(hotWaterStartPosition);
-        FragmentTransaction fragmentTransaction;
-        fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.container, mainFragment);
-        fragmentTransaction.commit();
+        Tariffs.getInstance().setHotWaterPosition(hotWaterStartPosition);
+        Utils.hideKeyboard(getContext(), v);
+        getActivity().getSupportFragmentManager().popBackStack();
     }
 }

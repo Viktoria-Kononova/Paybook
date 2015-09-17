@@ -1,8 +1,10 @@
-package com.example.kononova.paybook;
+package com.example.kononova.paybook.settings;
 
 import android.content.SharedPreferences;
 
-public class StorageTariff implements ITariff{
+import com.example.kononova.paybook.settings.ITariff;
+
+public class StorageTariff implements ITariff {
     private SharedPreferences sharedPreferences;
     public static final String APP_PREFERENCES_LIGHT = "lightTariff";
     public static final String APP_PREFERENCES_COLD_WATER = "coldWaterTariff";
@@ -53,36 +55,36 @@ public class StorageTariff implements ITariff{
     }
 
     @Override
-    public int getLightStartPosition() {
+    public int getLightPosition() {
         return sharedPreferences.getInt(APP_PREFERENCES_LIGHT_START, 0);
     }
 
     @Override
-    public void setLightStartPosition(int lightStartPosition) {
+    public void setLightPosition(int lightStartPosition) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(APP_PREFERENCES_LIGHT_START, lightStartPosition);
         editor.apply();
     }
 
     @Override
-    public int getColdWaterStartPosition() {
+    public int getColdWaterPosition() {
         return sharedPreferences.getInt(APP_PREFERENCES_COLD_WATER_START, 0);
     }
 
     @Override
-    public void setColdWaterStartPosition(int coldWaterStartPosition) {
+    public void setColdWaterPosition(int coldWaterStartPosition) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(APP_PREFERENCES_COLD_WATER_START, coldWaterStartPosition);
         editor.apply();
     }
 
     @Override
-    public int getHotWaterStartPosition() {
+    public int getHotWaterPosition() {
         return sharedPreferences.getInt(APP_PREFERENCES_HOT_WATER_START, 0);
     }
 
     @Override
-    public void setHotWaterStartPosition(int hotWaterStartPosition) {
+    public void setHotWaterPosition(int hotWaterStartPosition) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(APP_PREFERENCES_HOT_WATER_START, hotWaterStartPosition);
         editor.apply();
