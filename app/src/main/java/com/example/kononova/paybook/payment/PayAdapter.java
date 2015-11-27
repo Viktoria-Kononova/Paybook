@@ -9,6 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.kononova.paybook.R;
+import com.example.kononova.paybook.savers.Serializer;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
